@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Combo: Co-speech holistic 3D human motion generation and efficient customizable adaptation in harmony.">
+  <meta name="keywords" content="Holistic Human Motion Generation, Speech-Driven, Parameter-Efficient Fine-Tuning, Diffusion Models">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Combo: Co-speech holistic 3D human motion generation and efficient customizable adaptation in harmony</title>
+
+ 
+  <!-- Google tag (gtag.js) -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-QLX02N2YBT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-QLX02N2YBT');
+  </script> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/teaser.jpg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Combo: Co-speech holistic 3D human motion generation and efficient customizable adaptation in harmony</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=zlq2S_0AAAAJ&hl=zh-CN">Chao Xu</a><sup>1,4*</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=TTW2mVoAAAAJ&hl=zh-CN">Mingze Sun</a><sup>2*</sup>,</span>
+              <span class="author-block">
+                <a href="https://zhiqic.github.io/homepage/index.html">Zhi-Qi Cheng</a><sup>3*</sup>,
+              </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?hl=zh-CN&view_op=list_works&gmla=AJsN-F4h68SjMWnpuQBCwVQc1yxUUbrTK3zd2einxg2c7k95h9IsJpz21rMhZ8Ynm9YBKSW5pKFQGRMJ2dTpYHzAr2xIvtyArjOSm6OuXbAa3wDI-irItjpFKJDzlFZ1g8SUipUmFKs1NM-CHWipHYontrFwSIRCBw&user=bnjiKkcAAAAJ">Fei Wang</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=t1emSE0AAAAJ&hl=zh-CN">Yang Liu</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=ZNhTHywAAAAJ&hl=zh-CN">Baigui Sun</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://rqhuang88.github.io/">Ruqi Huang</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=Py54GcEAAAAJ&hl=en">Alexander Hauptmann</a><sup>3</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>
+              <a>Alibaba Group</a>, 
+            </span>
+            <span class="author-block"><sup>2</sup>
+              <a>Tsinghua University</a>,
+            </span>
+            <span class="author-block"><sup>3</sup>
+              <a>Carnegie Mellon University</a>,
+            </span>
+            <span class="author-block"><sup>4</sup>
+              <a>Zhejiang University</a>
+            </span>
+          </div>
+
+          * equal technical contribution.
+          This work was completed in collaboration with Carnegie Mellon University.
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://www.arxiv.org/abs/2408.09397"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=i39semywOqw"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/modelscope/facechain"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code(Coming soon)</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CJM BEAT -->
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/output1.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-toby">
+          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/output2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/output3.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/output4.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+            <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/output5.mp4"
+                      type="video/mp4">
+            </video>
+        </div>
+      <div class="item item-shiba">
+        <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/output6.mp4"
+                  type="video/mp4">
+        </video>
+    </div>
+      
+      </div>
+    </div>
+  </div>
+</section>
+<!-- CJM BEAT END -->
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            In this paper, we propose a novel framework, <span class="highlight">Combo</span>, for harmonious co-speech holistic 3D human motion generation and efficient customizable adaption.
+            In particular, we identify that one fundamental challenge as the multiple-input-multiple-output (MIMO) nature of the generative model of interest.
+            More concretely, on the input end, the model typically consumes both speech signals and character guidance (<em>e.g.,</em> identity and emotion), 
+            which not only poses challenge on learning capacity but also hinders further adaptation to varying guidance; 
+            on the output end, holistic human motions mainly consist of facial expressions and body movements, which are inherently correlated but non-trivial to coordinate in current data-driven generation process.
+            In response to the above challenge, we propose tailored designs to both ends. For the former, we propose to pre-train on data regarding a fixed identity with neutral emotion, and defer the incorporation of customizable conditions (identity and emotion) to fine-tuning stage,
+             which is boosted by our novel <span class="code">X-Adapter</span> for parameter-efficient fine-tuning. For the latter, we propose a simple yet effective transformer design, <span class="code">DU-Trans</span>, which first divides into two branches to learn individual features of face expression and body movements, 
+             and then unites those to learn a joint bi-directional distribution and directly predicts combined coefficients.
+             Evaluated on BEAT2 and SHOW datasets, <span class="code">Combo</span> is highly effective in generating high-quality motions but also efficient in transferring identity and emotion. The code will be released at <a href="https://github.com/modelscope/facechain" target="_blank">https://github.com/modelscope/facechain</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Demo Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/i39semywOqw?si=AFs-IOsa22hRR5aQ"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+<!-- Framework -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <h2 class="title is-3">Framework</h2>
+    </div>
+    <div class="columns is-centered">
+      <div class="content has-text-justified">
+        <br/>
+        <p>
+          <strong>Overview of the Combo.</strong> The basic architecture named DU-Trans (a) first introduces two transformer encoders <span style="font-weight: bold;">Ψ<sup>F</sup></span>, 
+          <span style="font-weight: bold;">Ψ<sup>B</sup></span> incorporated with auxiliary losses <em>ℒ<sub>F</sub></em>, <em>ℒ<sub>B</sub></em> and Bi-Flow to help model their respective distributions, 
+          obtaining two sets of discriminative features <span style="font-weight: bold;">f<sup>F</sup><sub>l</sub></span>, <span style="font-weight: bold;">f<sup>B</sup><sub>l</sub></span>. Subsequently, 
+          it merges these two features and inputs them into the decoder <span style="font-weight: bold;">Φ<sup>FB</sup></span> to learn the joint distribution, and directly uses a single head to predict synchronized and coordinated face and body coefficients. 
+          Then, X-Adapter (b) is the central module for achieving identity customization and emotion transfer, and it is simply inserted in parallel into the MHA and FFN layers of the two encoders. 
+          Note that this adapter is a general structure suitable for both identity and emotion, offering better controllable generation through conditions <span style="font-weight: bold;">z<sub>e</sub></span> and <span style="font-weight: bold;">z<sub>id</sub></span>.
+        </p>
+      </div>
+    </div>
+    <div class="content has-text-centered">
+      <img src="./static/images/pipeline.png"
+                          class="image"
+                          alt="image."
+                          height="100%"
+                          width="100%"/>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <h2 class="title is-3">Verification on DU-Trans</h2>
+    </div>
+    <div class="columns is-centered">
+      <div class="content has-text-justified">
+        <br/>
+        <p>
+          <b>Qualitative comparison with TalkSHOW and EMAGE on BEAT2 dataset.</b> The left part shows the holistic motions while the right presents a close-up of the expressions. 
+          Our method can generate expressions and gestures that are synchronized with the audio, particularly producing accurate and diverse gestures for rhythm, semantics, 
+          and specific concepts.
+        </p>
+      </div>
+    </div>
+    <div class="content has-text-centered">
+      <img src="./static/images/qualitative_comparison.png"
+                          class="image"
+                          alt="image."
+                          height="100%"
+                          width="100%"/>
+    </div>
+    <div class="columns is-centered">
+      <div class="content has-text-justified">
+        <br/>
+        <p>
+          <b>Quantitative comparison with SOTA methods on BEAT2 dataset.</b>  The <em>*</em> indicates training from scratch (pretraining), while the <em>†</em> signifies fine-tuning the emotional model from the neutral pre-trained one. 
+          For simplicity, we report MSE &times; 10<sup>-8</sup> and LVD &times; 10<sup>-5</sup> as EMAGE.
+        </p>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <img src="./static/images/quantitative_comparison.png"
+                          class="image"
+                          alt="image."
+                          height="50%"
+                          width="50%"/>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <h2 class="title is-3">Emotion Control and Identity Personalization</h2>
+    </div>
+    <div class="columns is-centered">
+      <div class="content has-text-justified">
+        <br/>
+        <p>
+          <b>The visualization of multi-modal emotion control and different identity personalization.</b>
+          The left part shows the manipulated outputs guided by sad images, happy audio, surprised motion clips. 
+          The right part displays the motions from the various source identities as well as the motions after fine-tuning that transfers them to the target identity Scott.
+        </p>
+      </div>
+    </div>
+    <div class="content has-text-centered">
+      <img src="./static/images/qualitative_analysis.png"
+                          class="image"
+                          alt="image."
+                          height="100%"
+                          width="100%"/>
+    </div>
+  </div>
+</section>
+
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <h2 class="title is-3">Efficiency Analysis on X-Adapter</h2>
+    </div>
+    <div class="columns is-centered">
+      <div class="content has-text-justified">
+        <br/>
+        <p>
+          <b>Tuning efficiency of X-Adapter.</b> 
+          We choose MSE for the face and BC for the body in this visualization. 
+          Values below 0 on the y-axis (<span class="highlight">gray fill</span>) indicate inferior performance compared to EMAGE, and vice versa.
+          Our design exhibits exceptional tuning efficiency in terms of training time and data, achieving SOTA performance within 
+          45 minutes with full (Ours) or half data (Ours-50), or even within 90 minutes with only 25% training data (Ours-25). 
+          Ours-FPFT means full-parameter finetuning on DU-Trans (w/o. X-adapter) with full data.
+        </p>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <img src="./static/images/efficiency_analysis.png"
+                          class="image"
+                          alt="image."
+                          height="80%"
+                          width="80%"/>
+    </div>
+  </div>
+</section>
+
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{xu2024combo,
+      title={Combo: Co-speech holistic 3D human motion generation and efficient customizable adaptation in harmony},
+      author={Xu, Chao and Sun, Mingze and Cheng, Zhi-Qi and Wang, Fei and Liu, Yang and Sun, Baigui and Huang, Ruqi and Hauptmann, Alexander},
+      journal={arXiv preprint arXiv:2408.09397},
+      year={2024}
+    }</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons 4.0 Licence</a>. Website template credit: <a
+            href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body>
+</html>
